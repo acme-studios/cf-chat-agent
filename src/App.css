@@ -1,0 +1,48 @@
+@reference "./index.css";
+
+/* Chat bubbles */
+.bubble-user {
+  /* light gray in light mode, darker gray in dark mode */
+  @apply self-end bg-neutral-200 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-50 shadow-sm;
+}
+.bubble-assistant {
+  @apply self-start bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 shadow-sm;
+}
+
+/* Minimal markdown styles used inside assistant bubbles */
+.md {
+  line-height: 1.6;
+}
+.md p + p { margin-top: 0.5rem; }
+.md h1, .md h2, .md h3 { font-weight: 600; margin: 0.25rem 0 0.5rem; }
+.md h1 { font-size: 1.25rem; }
+.md h2 { font-size: 1.125rem; }
+.md h3 { font-size: 1rem; }
+.md code {
+  font-family: "Quicksand";
+  background: rgba(0,0,0,0.06);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+}
+.dark .md code { background: rgba(255,255,255,0.06); }
+.md pre {
+  background: rgba(0,0,0,0.06);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 0.25rem 0 0.5rem;
+}
+.dark .md pre { background: rgba(255,255,255,0.06); }
+.md a { text-decoration: underline; text-underline-offset: 3px; }
+.md ul { padding-left: 1rem; list-style: disc; }
+.md ol { padding-left: 1rem; list-style: decimal; }
+.md li + li { margin-top: 0.125rem; }
+
+/* Minimal button that has contrast in light and dark */
+.btn {
+	@apply rounded-md border px-3 py-2 text-sm transition
+			border-neutral-300 bg-white/80 text-neutral-900 shadow-sm
+			hover:bg-white
+			dark:border-neutral-700 dark:bg-neutral-900/60 dark:text-neutral-50
+			hover:dark:bg-neutral-900/80;
+  }
